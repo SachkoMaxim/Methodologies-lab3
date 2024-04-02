@@ -26,6 +26,6 @@ def make_app(settings: Settings) -> FastAPI:
 
     @app.get('/', include_in_schema=False, response_class=FileResponse)
     async def root() -> str:
-        return 'build/index.html'
+        return 'build/index.html' # function root returns content of the file build/index.html, this content is then sent as a response to GET request for the root path
 
     return app
