@@ -1,3 +1,6 @@
+# This is app.py file
+# Part of the 3rd lab work
+# Done by Maxim Sachko, Group IM-22, KPI FICE
 from fastapi import FastAPI
 from fastapi.staticfiles import StaticFiles
 from starlette.responses import FileResponse
