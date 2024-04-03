@@ -1,12 +1,19 @@
-FROM node:20
+FROM node:10 as build
+
+WORKDIR /app
+COPY index.js .
+COPY package*.json .
+
+RUN npm i
+RUN npm i pkg -g
+RUN pkg -t node10-alpine-x64 index.js
+
+FROM alpine
+
+RUN apk add --no-cache libstdc++ libgcc
 
 WORKDIR /app
 
-COPY package*.json ./
-RUN npm install
+COPY --from=build /app/ .
 
-COPY . .
-
-EXPOSE 8080
-
-CMD ["node", "index.js"]
+CMD ["./index"]
