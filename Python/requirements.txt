@@ -8,6 +8,7 @@ filelock==3.13.3
 h11==0.14.0
 httptools==0.6.1
 idna==3.6
+numpy==1.26.4
 pip==24.0
 platformdirs==4.2.0
 pydantic==2.6.4
